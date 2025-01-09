@@ -48,15 +48,15 @@ class Calc:
         return
 
     def interest(self,t):
-        Amt = self.principal * (1 + self.rate / self.nPeriods) ** (self.nPeriods * t)
-        Int = Amt - self.principal
-        Int = round(Int,2)
-        return Int
+        self.Amt = self.principal * (1 + self.rate / self.nPeriods) ** (self.nPeriods * t)
+        self.Int = self.Amt - self.principal
+        self.Int = round(self.Int,2)
+        return self.Int
     
     def amount(self,t):
-        Amt = self.principal * (1 + self.rate / self.nPeriods) ** (self.nPeriods * t)
-        Amt = round(Amt,2)
-        return Amt
+        self.Amt = self.principal * (1 + self.rate / self.nPeriods) ** (self.nPeriods * t)
+        self.Amt = round(self.Amt,2)
+        return self.Amt
 
 a = Calc(P=1000,r=4,n=2)
 assert a.interest(3) == 126.16
